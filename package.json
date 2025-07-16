@@ -1,0 +1,39 @@
+{
+  "name": "hacker-maze-escape",
+  "version": "1.0.0",
+  "description": "A hacker-themed maze escape game built with Next.js",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^14.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "framer-motion": "^10.16.0",
+    "typescript": "^5.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@types/node": "^20.0.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.0",
+    "postcss": "^8.4.0",
+    "autoprefixer": "^10.4.0",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^14.0.0"
+  },
+  "keywords": [
+    "nextjs",
+    "game",
+    "maze",
+    "hacker",
+    "typescript",
+    "tailwindcss"
+  ],
+  "author": "Hacker Maze Developer",
+  "license": "MIT"
+}

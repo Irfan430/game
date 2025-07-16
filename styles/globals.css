@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Hacker';
+  src: url('/hacker.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  background: #0a0a0a;
+  color: #00ff00;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Matrix rain background effect */
+.matrix-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.1;
+}
+
+.matrix-char {
+  position: absolute;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: #00ff41;
+  animation: matrix-rain 20s linear infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ff00;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00ff41;
+}
+
+/* Glitch effect */
+.glitch {
+  position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  animation: glitch-1 0.5s infinite;
+  color: #ff0040;
+  z-index: -1;
+}
+
+.glitch::after {
+  animation: glitch-2 0.5s infinite;
+  color: #0040ff;
+  z-index: -2;
+}
+
+@keyframes glitch-1 {
+  0%, 14%, 15%, 49%, 50%, 99%, 100% {
+    transform: translateX(0);
+  }
+  15%, 49% {
+    transform: translateX(-2px);
+  }
+}
+
+@keyframes glitch-2 {
+  0%, 20%, 21%, 62%, 63%, 99%, 100% {
+    transform: translateY(0);
+  }
+  21%, 62% {
+    transform: translateY(-1px);
+  }
+}
+
+/* Neon glow effects */
+.neon-glow {
+  text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+}
+
+.neon-border {
+  box-shadow: 0 0 5px #00ff00, inset 0 0 5px #00ff00;
+}
+
+/* Game grid styles */
+.maze-cell {
+  transition: all 0.1s ease;
+}
+
+.maze-wall {
+  background: linear-gradient(45deg, #333, #666);
+  border: 1px solid #00ff00;
+}
+
+.maze-path {
+  background: rgba(0, 255, 0, 0.05);
+}
+
+.maze-player {
+  background: radial-gradient(circle, #00ff00, #00ff41);
+  box-shadow: 0 0 10px #00ff00;
+  border-radius: 50%;
+}
+
+.maze-chip {
+  background: radial-gradient(circle, #0040ff, #0080ff);
+  box-shadow: 0 0 5px #0040ff;
+  border-radius: 3px;
+}
+
+.maze-firewall {
+  background: radial-gradient(circle, #ff0040, #ff4080);
+  box-shadow: 0 0 5px #ff0040;
+  animation: pulse 1s infinite;
+}
+
+.maze-locker {
+  background: linear-gradient(45deg, #ffff00, #ffcc00);
+  box-shadow: 0 0 5px #ffff00;
+  border: 2px solid #ffff00;
+}
+
+.maze-exit {
+  background: radial-gradient(circle, #00ff00, #40ff40);
+  box-shadow: 0 0 15px #00ff00;
+  animation: pulse-green 2s infinite;
+}
+
+/* Button animations */
+.btn-hack {
+  @apply bg-transparent border-2 border-hacker-green text-hacker-green px-6 py-3 font-mono uppercase tracking-wider transition-all duration-300;
+}
+
+.btn-hack:hover {
+  @apply bg-hacker-green text-black shadow-lg;
+  box-shadow: 0 0 20px #00ff00;
+}
+
+.btn-hack:active {
+  @apply scale-95;
+}
+
+/* Modal styles */
+.modal-backdrop {
+  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Loading animation */
+.loading-dots::after {
+  content: '';
+  animation: loading-dots 2s infinite;
+}
+
+@keyframes loading-dots {
+  0%, 20% {
+    content: '.';
+  }
+  40% {
+    content: '..';
+  }
+  60%, 100% {
+    content: '...';
+  }
+}
